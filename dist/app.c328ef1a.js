@@ -5688,13 +5688,22 @@ exports.default = exports.gsap = gsapWithCSS;
 var _gsap = require("gsap");
 
 var img1 = document.querySelector('.img1');
+/*gsap.from(img1, {
+  autoAlpha: 0,
+    duration: 2
+})*/
+//This can accure a bug, what if user missclick, the image doesnt show up!
 
-_gsap.gsap.to(img1, {
-  x: 100,
-  y: 100,
-  duration: 2,
-  rotate: '45deg',
-  backgroundColor: 'red'
+document.querySelector('.btn').addEventListener("click", function () {
+  console.info('button pressed');
+
+  _gsap.gsap.from(img1, {
+    scale: 0.5,
+    autoAlpha: 0,
+    duration: 2,
+    y: -100,
+    rotate: '68deg'
+  });
 });
 },{"gsap":"node_modules/gsap/index.js"}],"../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];

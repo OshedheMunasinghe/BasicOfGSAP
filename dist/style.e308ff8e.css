@@ -25,9 +25,10 @@ img {
   margin: 20px;
 }
 
-/* .img1, .img2, .img3 {
-    opacity: 0;
-}  */
+ .img1 {
+    /*opacity: 1;*/
+   visibility: hidden;
+}
 
 h1,
 p {
