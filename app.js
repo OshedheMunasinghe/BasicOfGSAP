@@ -9,3 +9,5 @@ gsap.from(img1, {
   ease: "elastic.out(1,0.3)",
   duration: 2
 })
+
+//accidently saved wrong branch
