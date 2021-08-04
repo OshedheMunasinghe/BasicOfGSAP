@@ -5692,7 +5692,7 @@ var img1 = document.querySelector('.img1');
 _gsap.gsap.to('.btn', {
   duration: 0.4,
   stagger: 0.2,
-  x: 100
+  x: "random(-100, 100)"
 });
 },{"gsap":"node_modules/gsap/index.js"}],"../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];

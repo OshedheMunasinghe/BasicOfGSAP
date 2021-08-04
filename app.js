@@ -6,5 +6,5 @@ gsap.to('.btn',
     {
         duration: 0.4,
         stagger: 0.2,
-        x: 100,
+        x: "random(-100, 100)",
     })
