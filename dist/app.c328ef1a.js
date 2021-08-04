@@ -5687,23 +5687,15 @@ exports.default = exports.gsap = gsapWithCSS;
 
 var _gsap = require("gsap");
 
+//Easing, go Gsap Doc -> Easing, it's very fun!
 var img1 = document.querySelector('.img1');
-/*gsap.from(img1, {
+
+_gsap.gsap.from(img1, {
   autoAlpha: 0,
-    duration: 2
-})*/
-//This can accure a bug, what if user missclick, the image doesnt show up!
-
-document.querySelector('.btn').addEventListener("click", function () {
-  console.info('button pressed');
-
-  _gsap.gsap.from(img1, {
-    scale: 0.5,
-    autoAlpha: 0,
-    duration: 2,
-    y: -100,
-    rotate: '68deg'
-  });
+  y: -100,
+  rotation: 90,
+  ease: "elastic.out(1,0.3)",
+  duration: 2
 });
 },{"gsap":"node_modules/gsap/index.js"}],"../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -5733,7 +5725,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56207" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53434" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -1,19 +1,11 @@
 import { gsap } from "gsap";
 
+//Easing, go Gsap Doc -> Easing, it's very fun!
 const img1 = document.querySelector('.img1')
-/*gsap.from(img1, {
+gsap.from(img1, {
   autoAlpha: 0,
-    duration: 2
-})*/
-
-//This can accure a bug, what if user missclick, the image doesnt show up!
-document.querySelector('.btn').addEventListener("click", () =>{
-  console.info('button pressed')
-  gsap.from(img1, {
-    scale: 0.5,
-    autoAlpha: 0,
-    duration: 2,
-    y: -100,
-    rotate: '68deg',
-  })
+   y:-100,
+  rotation: 90,
+  ease: "elastic.out(1,0.3)",
+  duration: 2
 })
