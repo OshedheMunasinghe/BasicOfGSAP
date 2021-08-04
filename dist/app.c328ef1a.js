@@ -5689,15 +5689,15 @@ var _gsap = require("gsap");
 
 var img1 = document.querySelector('.img1');
 
-_gsap.gsap.from(img1, {
+_gsap.gsap.from('img', {
   autoAlpha: 0,
   y: -100,
-  rotation: 90,
-  ease: "elastic.out(1,0.3)",
+  ease: "power4",
   duration: 2,
-  repeat: -1,
-  yoyo: true,
-  repeatDelay: 0.9
+  stagger: {
+    each: 0.5,
+    from: "center"
+  }
 });
 },{"gsap":"node_modules/gsap/index.js"}],"../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -5727,7 +5727,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53434" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49921" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
