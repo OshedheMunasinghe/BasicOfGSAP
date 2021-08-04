@@ -5687,7 +5687,6 @@ exports.default = exports.gsap = gsapWithCSS;
 
 var _gsap = require("gsap");
 
-//Easing, go Gsap Doc -> Easing, it's very fun!
 var img1 = document.querySelector('.img1');
 
 _gsap.gsap.from(img1, {
@@ -5695,7 +5694,10 @@ _gsap.gsap.from(img1, {
   y: -100,
   rotation: 90,
   ease: "elastic.out(1,0.3)",
-  duration: 2
+  duration: 2,
+  repeat: -1,
+  yoyo: true,
+  repeatDelay: 0.9
 });
 },{"gsap":"node_modules/gsap/index.js"}],"../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
