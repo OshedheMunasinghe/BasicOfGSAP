@@ -5687,24 +5687,23 @@ exports.default = exports.gsap = gsapWithCSS;
 
 var _gsap = require("gsap");
 
-var img1 = document.querySelector(".img1"); //how to write function in GSAP, to use in js how to trigger events almost like android activityStart Resume ect.
+var img1 = document.querySelector(".img1"); //when you want to save animation
 
-_gsap.gsap.to(img1, {
-  x: 100,
-  duration: 1,
-  repeat: 1,
-  onComplete: function onComplete() {
-    console.log('COMPLETE');
+_gsap.gsap.registerEffect({
+  name: "imgAnimation",
+  effect: function effect(targets, config) {
+    return _gsap.gsap.to(targets, {
+      duration: config.duration,
+      y: 200,
+      scale: 1.4,
+      rotation: 360
+    });
   },
-  onStart: function onStart() {
-    return console.log('START');
-  },
-  onUpdate: function onUpdate() {
-    return console.log('UPDATE');
-  },
-  onRepeat: function onRepeat() {
-    return console.log('REPEAT');
-  }
+  duration: 2
+});
+
+_gsap.gsap.effects.imgAnimation(img1, {
+  duration: 5
 });
 },{"gsap":"node_modules/gsap/index.js"}],"../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
