@@ -5687,20 +5687,24 @@ exports.default = exports.gsap = gsapWithCSS;
 
 var _gsap = require("gsap");
 
-//keyframes, when you want to animate at one line instead duplicate to()
-var img1 = document.querySelector(".img1");
+var img1 = document.querySelector(".img1"); //how to write function in GSAP, to use in js how to trigger events almost like android activityStart Resume ect.
 
-_gsap.gsap.to('.img1', {
-  keyframes: [{
-    duration: 0.3,
-    x: 100
-  }, {
-    duration: 0.3,
-    y: 100
-  }, {
-    duration: 0.3,
-    x: 200
-  }]
+_gsap.gsap.to(img1, {
+  x: 100,
+  duration: 1,
+  repeat: 1,
+  onComplete: function onComplete() {
+    console.log('COMPLETE');
+  },
+  onStart: function onStart() {
+    return console.log('START');
+  },
+  onUpdate: function onUpdate() {
+    return console.log('UPDATE');
+  },
+  onRepeat: function onRepeat() {
+    return console.log('REPEAT');
+  }
 });
 },{"gsap":"node_modules/gsap/index.js"}],"../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -5730,7 +5734,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54462" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51101" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
