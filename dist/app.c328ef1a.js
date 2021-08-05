@@ -5687,34 +5687,43 @@ exports.default = exports.gsap = gsapWithCSS;
 
 var _gsap = require("gsap");
 
-//stor favorit!
-var TL = _gsap.gsap.timeline();
+//När man vi animera samtidigt, lägg till tredje parameter i position
+//position kan ändra till vanlig siffra, position påminner som en parameter-duration :)
+//du kan koda som defult i timeline i methods så det blir läsbart.
+var TL = _gsap.gsap.timeline({
+  defaults: {
+    duration: 1,
+    ease: "power4.out"
+  },
+  paused: true,
+  onComplete: function onComplete() {
+    return console.log("COMPLETE");
+  },
+  onStart: function onStart() {
+    return console.log("START");
+  }
+});
 
 TL.from('.img1', {
   autoAlpha: 0,
-  y: -50,
-  duration: 1
-});
-TL.from('.img2', {
+  y: -50
+}).from('.img2', {
   autoAlpha: 0,
-  y: -50,
-  duration: 1
-});
-TL.from('.img3', {
+  y: -50
+}).from('.img3', {
   autoAlpha: 0,
-  y: -50,
-  duration: 1
-});
-TL.from('h1', {
+  y: -50
+}).from('h1', {
   autoAlpha: 0,
-  y: -50,
-  duration: 1
-});
-TL.from('p', {
+  y: -50
+}).addLabel('endAnim', '-=2').from('p', {
   autoAlpha: 0,
-  y: -50,
-  duration: 1
+  y: -50
 });
+setTimeout(function () {
+  TL.seek('endAnim');
+  TL.play();
+}, 1000);
 },{"gsap":"node_modules/gsap/index.js"}],"../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
