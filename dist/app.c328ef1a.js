@@ -5687,8 +5687,23 @@ exports.default = exports.gsap = gsapWithCSS;
 
 var _gsap = require("gsap");
 
-//stor favorit!
-var TL = _gsap.gsap.timeline();
+//När man vi animera samtidigt, lägg till tredje parameter i position
+//position kan ändra till vanlig siffra, position påminner som en parameter-duration :)
+//du kan koda som defult i timeline i methods så det blir läsbart.
+var TL = _gsap.gsap.timeline({
+  defaults: {
+    duration: 1,
+    ease: "power4.out"
+  },
+  repeat: -1,
+  yoyo: true,
+  onComplete: function onComplete() {
+    return console.log("COMPLETE");
+  },
+  onStart: function onStart() {
+    return console.log("START");
+  }
+});
 
 TL.from('.img1', {
   autoAlpha: 0,
