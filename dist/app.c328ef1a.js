@@ -5687,23 +5687,33 @@ exports.default = exports.gsap = gsapWithCSS;
 
 var _gsap = require("gsap");
 
-var img1 = document.querySelector(".img1"); //when you want to save animation
+//stor favorit!
+var TL = _gsap.gsap.timeline();
 
-_gsap.gsap.registerEffect({
-  name: "imgAnimation",
-  effect: function effect(targets, config) {
-    return _gsap.gsap.to(targets, {
-      duration: config.duration,
-      y: 200,
-      scale: 1.4,
-      rotation: 360
-    });
-  },
-  duration: 2
+TL.from('.img1', {
+  autoAlpha: 0,
+  y: -50,
+  duration: 1
 });
-
-_gsap.gsap.effects.imgAnimation(img1, {
-  duration: 5
+TL.from('.img2', {
+  autoAlpha: 0,
+  y: -50,
+  duration: 1
+});
+TL.from('.img3', {
+  autoAlpha: 0,
+  y: -50,
+  duration: 1
+});
+TL.from('h1', {
+  autoAlpha: 0,
+  y: -50,
+  duration: 1
+});
+TL.from('p', {
+  autoAlpha: 0,
+  y: -50,
+  duration: 1
 });
 },{"gsap":"node_modules/gsap/index.js"}],"../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
